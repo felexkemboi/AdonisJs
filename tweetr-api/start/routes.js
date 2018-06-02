@@ -40,3 +40,9 @@ Route.group(() => {
     .middleware(['auth:jwt'])
 
 Route.post('/follow/:id', 'UserController.follow')
+
+Route.delete('/unfollow/:id', 'UserController.unFollow')
+
+Route.get('/timeline', 'UserController.timeline')
+
+Route.post('/tweet', 'TweetController.tweet').middleware(['auth:jwt'])
